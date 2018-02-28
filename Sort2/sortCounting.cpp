@@ -24,7 +24,8 @@ void sortCounting(int* &arr, int size){
 		arr1[i] += arr1[i-1];
 	}
 	for (int i = size - 1; i >= 0; i--){
-		arr2[--arr1[arr[i] - min] - 1] = arr[i];
+		arr2[arr1[arr[i] - min] - 1] = arr[i];
+		arr1[arr[i] - min]--;
 	}
 	delete[] arr;
 	delete[] arr1;
